@@ -133,6 +133,11 @@ body {
     font-weight: 800;
     margin-bottom: 1rem;
     letter-spacing: 1px;
+    color: #fff !important;
+    background: none !important;
+    -webkit-background-clip: border-box !important;
+    -webkit-text-fill-color: #fff !important;
+    background-clip: border-box !important;
 }
 
 .hero p {
