@@ -5,64 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Home</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main Navigation">
+        <div class="nav-brand">
+           
+            <span class="brand-title">Barath's Portfolio</span>
+        </div>
         <div class="nav-links">
-            <a href="index.html" class="active">Home</a>
+            <a href="index.html" class="active" aria-current="page">Home</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </div>
-        <button id="themeToggle" class="theme-toggle">🌙</button>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+            🌙
+        </button>
     </nav>
 
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Hi, I'm Barath. I build modern web apps and creative digital solutions.<br>Explore my projects below!</p>
+            <a href="about.html" class="hero-btn">Learn More About Me</a>
+        </div>
+    </header>
+
     <main>
-        <h1>My Projects</h1>
+        <h2 class="section-title">Featured Projects</h2>
         <div class="projects-grid">
-            <div class="project-card">
+            <div class="project-card" tabindex="0" aria-haspopup="dialog" data-project="discord-bot">
                 <div class="project-image">
-                    <img src="./images/discord-bot.jpg" alt="Project 1">
+                    <img src="./images/discord-bot.jpg" alt="Discord Bot project screenshot">
                 </div>
                 <div class="project-content">
-                    <h2>Discord Bot</h2>
-                    <p> A custom Discord chatbot built with Node.js, designed to automate tasks, respond to commands, and enhance server interactions.</p>
+                    <h3>Discord Bot</h3>
+                    <p>A custom Discord chatbot built with Node.js, designed to automate tasks, respond to commands, and enhance server interactions.</p>
                     <div class="project-tech">
                         <span>Node.JS</span>
                         <span>Express.JS</span>
-                        
                     </div>
+                    <button class="project-link" aria-label="View Discord Bot project details" data-modal="discord-bot">View Details</button>
                 </div>
             </div>
-            <div class="project-card">
+            <div class="project-card" tabindex="0" aria-haspopup="dialog" data-project="spotify">
                 <div class="project-image">
-                    <img src="./images/spotify.jpg" alt="Project 2">
+                    <img src="./images/spotify.jpg" alt="Spotify frontend clone screenshot">
                 </div>
                 <div class="project-content">
-                    <h2>Spotify static frontend page</h2>
-                    <p>A frontend clone of Spotify, showcasing an intuitive UI/UX design using React,Tailwind CSS,Html.</p>
+                    <h3>Spotify static frontend page</h3>
+                    <p>A frontend clone of Spotify, showcasing an intuitive UI/UX design using React, Tailwind CSS, and HTML.</p>
                     <div class="project-tech">
                         <span>React</span>
                         <span>Tailwind CSS</span>
-                        <span>Html</span>
+                        <span>HTML</span>
                     </div>
+                    <button class="project-link" aria-label="View Spotify frontend project details" data-modal="spotify">View Details</button>
                 </div>
             </div>
-            <div class="project-card">
+            <div class="project-card" tabindex="0" aria-haspopup="dialog" data-project="weatherapp">
                 <div class="project-image">
-                    <img src="./images/weatherapp.jpg" alt="Project 3">
+                    <img src="./images/weatherapp.jpg" alt="Weather App screenshot">
                 </div>
                 <div class="project-content">
-                    <h2>Weather APP</h2>
+                    <h3>Weather APP</h3>
                     <p>A web application that fetches real-time weather data using an API and displays current conditions in a user-friendly interface.</p>
                     <div class="project-tech">
                         <span>HTML</span>
                         <span>CSS</span>
                         <span>JavaScript</span>
                     </div>
+                    <button class="project-link" aria-label="View Weather App project details" data-modal="weatherapp">View Details</button>
                 </div>
             </div>
         </div>
     </main>
+
+    <!-- Project Detail Modals -->
+    <div id="modal-overlay" class="modal-overlay" tabindex="-1" aria-hidden="true">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc">
+        <button class="modal-close" aria-label="Close project details">&times;</button>
+        <div id="modal-content"></div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <span>&copy; 2024 Barath. All rights reserved.</span>
+        <div class="footer-links">
+          <a href="mailto:barath@example.com" aria-label="Email"><svg class="footer-icon" viewBox="0 0 24 24"><path d="M2 4h20v16H2z" fill="none"/><path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="2" fill="none"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg class="footer-icon" viewBox="0 0 24 24"><circle cx="4.983" cy="5.009" r="2.188"/><path d="M9.237 8.855v7.145h-3.5V8.855h3.5zm-1.75-1.75c-1.104 0-2-.896-2-2s.896-2 2-2 2 .896 2 2-.896 2-2 2zm7.5 1.75v1.357h-.025c-.484-.92-1.668-1.89-3.425-1.89-3.662 0-4.35 2.41-4.35 5.548v6.035h3.5v-5.357c0-1.276.023-2.92 1.78-2.92 1.78 0 1.825 1.39 1.825 2.82v5.457h3.5v-5.857c0-2.79-.6-4.857-3.5-4.857z"/></svg></a>
+          <a href="#" aria-label="GitHub"><svg class="footer-icon" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.867 8.166 6.839 9.489.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.461-1.11-1.461-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.529 2.341 1.088 2.91.832.091-.647.35-1.088.636-1.339-2.22-.253-4.555-1.112-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.944.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.744 0 .268.18.579.688.481C19.135 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg></a>
+        </div>
+      </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
